@@ -1,0 +1,5 @@
+targets:
+- bin
+options:
+  bin:
+    useHome: true

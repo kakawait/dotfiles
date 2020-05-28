@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+
+readonly VERSION="0.0.1"
+
+usage() {
+  echo -n "$(basename $0) [OPTION]... [FILE]
+
+Set new wallpaper by passing image as argument
+
+ Options:
+  -q, --quiet       Quiet (no output)
+  -v, --verbose     Output more
+  -h, --help        Display this help and exit
+      --version     Output version information and exit
+"
+}
+
+main() {
+  if [[ -z "$1" ]]; then
+    err "Missing background file argument"
+    echo -e
+    usage
+    die
+  fi
+
+  if [[ ! -f "$1" ]]; then
+    err "Wallpaper file on path $1 is missing or unreadable"
+    echo -e
+    usage
+    die
+  fi
+
+  local filename
+  filename="$(basename "$1")"
+  local ext="${filename##*.}"
+  if [[ "$ext" != "jpg" ]]; then
+    log "Try to convert $ext to jpg (into ~/pictures/wallpapers/${filename%.*}.jpg)"
+    convert "$1" "$HOME/pictures/wallpapers/${filename%.*}.jpg"
+  elif [[ ! -f "$HOME/pictures/wallpapers/${filename%.*}.jpg" ]]; then
+    log "Copy $1 to ~/pictures/wallpapers/${filename%.*}.jpg"
+    cp "$1" "$HOME/pictures/wallpapers/${filename%.*}.jpg"
+  fi
+
+  log "Copy $1 to ~/pictures/wallpapers/default.jpg"
+  cp "$1" "$HOME/pictures/wallpapers/default.jpg"
+
+  feh --bg-fill "$HOME/pictures/wallpapers/default.jpg"
+
+  sudo convert "$HOME/pictures/wallpapers/default.jpg" -resize 1920x1080 -filter Gaussian -blur 0x15 "/boot/efi/EFI/refind/refind-theme-circle/bg.png"
+}
+
+source "$(dirname $(readlink -f "$0"))/boilerplate.sh"
