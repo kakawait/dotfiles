@@ -1,6 +1,7 @@
 targets:
 - bin
 - dunst
+- i3
 options:
   bin:
     useHome: true
