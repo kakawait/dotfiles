@@ -4,6 +4,7 @@ targets:
 - i3
 - polybar
 - picom
+- starship.toml
 options:
   bin:
     useHome: true
