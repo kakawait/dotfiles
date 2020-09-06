@@ -3,6 +3,7 @@ targets:
 - dunst
 - i3
 - polybar
+- picom
 options:
   bin:
     useHome: true
