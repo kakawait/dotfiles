@@ -4,6 +4,7 @@ targets:
 - i3
 - polybar
 - picom
+- kitty
 - starship.toml
 options:
   bin:
