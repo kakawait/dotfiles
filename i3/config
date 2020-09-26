@@ -171,6 +171,9 @@ bindsym $mod+d exec dmenu_run -nb "$fg" -nf "$bg" -sb "$bg" -sf "$fg"
 ###########################################################################
 # KEYBINDINGS - session behaviors                                         #
 ###########################################################################
+# lock
+bindsym $mod+shift+x exec betterlockscreen --lock blur
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 

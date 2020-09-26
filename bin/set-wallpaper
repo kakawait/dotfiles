@@ -44,8 +44,13 @@ main() {
   log "Copy $1 to ~/pictures/wallpapers/default.jpg"
   cp "$1" "$HOME/pictures/wallpapers/default.jpg"
 
+  log "Update lock wallpaper"
+  betterlockscreen -u "$HOME/pictures/wallpapers/default.jpg"
+
+  log "Set wallpaper"
   feh --bg-fill "$HOME/pictures/wallpapers/default.jpg"
 
+  log "Update UEFI refind wallpaper"
   sudo convert "$HOME/pictures/wallpapers/default.jpg" -resize 1920x1080 -filter Gaussian -blur 0x15 "/boot/efi/EFI/refind/refind-theme-circle/bg.png"
 }
 
