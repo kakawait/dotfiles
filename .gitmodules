@@ -1,0 +1,3 @@
+[submodule "polybar/gmail"]
+	path = polybar/gmail
+	url = git@github.com:kakawait/polybar-gmail.git
