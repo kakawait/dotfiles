@@ -5,6 +5,7 @@ targets:
 - polybar
 - picom
 - kitty
+- systemd/user/aria2.service
 - starship.toml
 options:
   bin:
