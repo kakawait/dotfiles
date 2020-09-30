@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 
 cd ~/.config/polybar/gmail
-poetry run ./launch.py -c '#dadce0' --prefix "${1:-}" --prefix-read "${2:-}" 
+poetry run ./launch.py -c '#dadce0' --prefix-unread "${1:-}" --prefix-read "${2:-}" 
