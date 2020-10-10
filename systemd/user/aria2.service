@@ -3,7 +3,8 @@ Description=Aria2 Service
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/aria2c --enable-rpc --rpc-listen-all --rpc-allow-origin-all --save-session %h/.cache/aria2/session.lock --input-file %h/.cache/aria2/session.lock --conf-path=%h/.config/aria2/aria2.conf
+EnvironmentFile=%h/.config/systemd/user/aria2.env
+ExecStart=/usr/bin/aria2c --enable-rpc --rpc-listen-all --rpc-allow-origin-all --rpc-secret=${ARIA2_RPC_SECRET} --save-session %h/.cache/aria2/session.lock --input-file %h/.cache/aria2/session.lock --conf-path=%h/.config/aria2/aria2.conf
 
 [Install]
 WantedBy=default.target
