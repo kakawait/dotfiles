@@ -1,0 +1,12 @@
+[Unit]
+Description=Torrent watcher and downloader
+After=aria2.service
+
+[Service]
+Environment=NODE_VERSION=12
+ExecStart=%h/.local/share/nvm/nvm-exec yarn start
+WorkingDirectory=%h/projects/patbrid
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

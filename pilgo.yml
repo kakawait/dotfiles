@@ -6,6 +6,7 @@ targets:
 - picom
 - kitty
 - systemd/user/aria2.service
+- systemd/user/patbrid.service
 - starship.toml
 options:
   bin:
