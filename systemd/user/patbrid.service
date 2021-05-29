@@ -4,7 +4,7 @@ After=aria2.service
 
 [Service]
 Environment=NODE_VERSION=12
-ExecStart=%h/.local/share/nvm/nvm-exec yarn start
+ExecStart=%h/.local/share/nvm/nvm-exec npm start
 WorkingDirectory=%h/projects/patbrid
 Restart=on-failure
 
