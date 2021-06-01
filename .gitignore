@@ -1,3 +1,11 @@
+# kitty
+/kitty/colors/ayu_mirage.conf
+/kitty/colors/custom.conf
+/kitty/colors/nord.conf
+/kitty/colors/nordic.conf
+/kitty/colors/rigel.conf
+
+# polybar
 /polybar/gmail/client_secrets.json
 
 # zsh
