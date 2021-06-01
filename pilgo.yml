@@ -2,12 +2,18 @@ targets:
 - bin
 - dunst
 - i3
+- kitty
+- maven
 - polybar
 - picom
-- kitty
+- rofi
+- zsh
 - systemd/user/aria2.service
 - systemd/user/patbrid.service
 - starship.toml
+- .zshenv
 options:
   bin:
+    useHome: true
+  .zshenv:
     useHome: true

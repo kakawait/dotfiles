@@ -1,1 +1,8 @@
-polybar/gmail/client_secrets.json
+/polybar/gmail/client_secrets.json
+
+# zsh
+/zsh/plugins/
+/zsh/history
+/zsh/*.zwc
+/zsh/znap-repos
+/zsh/.zcompdump

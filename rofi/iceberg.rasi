@@ -1,0 +1,71 @@
+configuration {
+  display-run: " ";
+  display-drun: "  ";
+  display-window: "  ";
+  drun-display-format: "{icon} {name}";
+  font: "Nunito 12";
+  modi: "window,run,drun";
+  show-icons: true;
+  icon-theme: "Papirus";
+}
+
+* {
+  primary-bg: #161821;
+  secondary-bg: #1E2132;
+
+  primary-fg: #84A0C6;
+  secondary-fg: #91ACD1;
+
+  select: #E9B189;
+
+  background-color: @primary-bg;
+  
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+}
+
+element {
+  padding: 12;
+  text-color: @secondary-fg;
+}
+
+element-icon {
+  size: 1.2em;
+}
+
+element selected {
+  text-color: @select;
+}
+
+entry {
+  background-color: @secondary-bg;
+  padding: 12 0 12 3;
+  text-color: @primary-fg;
+}
+
+secondary-fgar {
+  children: [prompt, entry];
+}
+
+listview {
+  columns: 1;
+  lines: 8;
+}
+
+mainbox {
+  children: [inputbar, listview];
+}
+
+prompt {
+  background-color: @secondary-bg;
+  enabled: true;
+  font: "Font Awesome 5 Free 12";
+  padding: 12 0 0 12;
+  text-color: @primary-fg;
+}
+
+secondary-fg {
+  transparency: "real";
+}
